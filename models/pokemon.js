@@ -7,4 +7,11 @@ const pokemon = [
   { name: "squirtle", img: "http://img.pokemondb.net/artwork/squirtle" },
   { name: "wartortle", img: "http://img.pokemondb.net/artwork/wartortle" },
 ];
-module.exports = pokemon;
+const capitalizedPokemon = pokemon.map((poke) => {
+  return {
+    name: poke.name.charAt(0).toUpperCase() + poke.name.slice(1),
+    img: poke.img,
+  };
+});
+
+module.exports = capitalizedPokemon;
