@@ -1,7 +1,7 @@
 import React from "react";
 const myStyle = {
-  color: "#ffffff",
-  backgroundColor: "#000000",
+  color: "blue",
+  backgroundColor: "pink",
 };
 
 function Index({ pokemon }) {
