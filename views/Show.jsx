@@ -1,11 +1,16 @@
 import React from "react";
 
 function Show({ pokemon }) {
-  console.log(pokemon);
+  // Update the image link by adding .jpg
+  const imageUrl = pokemon.img + ".jpg";
+
   return (
     <div>
-      <h1>{pokemon.name}</h1>
-      <img src={pokemon.img} alt={pokemon.name} />
+      <h1>Gotta Catch 'Em All</h1>
+      <h2>{pokemon.name}</h2>
+
+      <img src={imageUrl} alt={pokemon.name} />
+      <a href="/pokemon">Back</a>
     </div>
   );
 }

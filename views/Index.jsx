@@ -4,7 +4,7 @@ const myStyle = {
   backgroundColor: "#000000",
 };
 
-function index({ pokemon }) {
+function Index({ pokemon }) {
   return (
     <div style={myStyle}>
       <h1>See All The Pokemon</h1>
@@ -12,7 +12,7 @@ function index({ pokemon }) {
         return (
           <li key={i}>
             {" "}
-            <a href={`pokemon/${i}`}> {pokemon.name} </a>
+            <a href={`pokemon/${i}`}>{pokemon.name} </a>
           </li>
         );
       })}
@@ -20,4 +20,4 @@ function index({ pokemon }) {
   );
 }
 
-module.exports = index;
+module.exports = Index;
