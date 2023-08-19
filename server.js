@@ -13,6 +13,11 @@ app.get("/", (req, res) => {
   res.send("<h1> Welcome to the Pokemon App! </h1>");
 });
 
+app.get("/pokemon/:id", (req, res) => {
+  const id = req.params.id;
+  res.send(id);
+});
+
 app.get("/pokemon/", (req, res) => {
   res.render("index", {
     pokemon: pokemons,
