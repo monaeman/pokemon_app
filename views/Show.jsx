@@ -7,7 +7,7 @@ function Show({ pokemon }) {
   return (
     <div>
       <h1>Gotta Catch 'Em All</h1>
-      <h2>{pokemon.name}</h2>
+      <h2>{pokemon.name} </h2>
 
       <img src={imageUrl} alt={pokemon.name} />
       <a href="/pokemon">Back</a>

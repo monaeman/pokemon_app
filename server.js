@@ -9,6 +9,14 @@ app.set("views", __dirname + "/views");
 app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
 
+//Middelware
+app.use((req, res, next) => {
+  console.log("I run for all routes!");
+  next();
+});
+//This allows the body of the post request
+app.use(express.urlencoded({ extended: false }));
+
 app.get("/", (req, res) => {
   res.send("<h1> Welcome to the Pokemon App! </h1>");
 });
@@ -17,6 +25,24 @@ app.get("/pokemon/", (req, res) => {
   res.render("Index", {
     pokemon: pokemons,
   });
+});
+
+//put this above your Show route
+app.get("/pokemon/new", (req, res) => {
+  res.render("New");
+});
+
+//Create = POST
+app.post("/pokemon", (req, res) => {
+  console.log(req.body);
+  if (req.body.readyToCatch === "on") {
+    req.body.readyToEat = true;
+  } else {
+    req.body.readyToEat = false;
+  }
+  pokemon.push(req.body);
+  console.log("this is the fruits array", pokemon);
+  res.send("data recieved");
 });
 
 //show
