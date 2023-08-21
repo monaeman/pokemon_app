@@ -36,12 +36,12 @@ app.get("/pokemon/new", (req, res) => {
 app.post("/pokemon", (req, res) => {
   console.log(req.body);
   if (req.body.readyToCatch === "on") {
-    req.body.readyToEat = true;
+    req.body.readyToCatch = true;
   } else {
-    req.body.readyToEat = false;
+    req.body.readyToCatch = false;
   }
-  pokemon.push(req.body);
-  console.log("this is the fruits array", pokemon);
+  pokemons.push(req.body);
+  console.log("this is the pokemon array", pokemons);
   res.send("data recieved");
 });
 
