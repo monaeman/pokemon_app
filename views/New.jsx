@@ -1,6 +1,8 @@
 import React from "react";
 
 function New() {
+  const IMG_URL = "http://img.pokemondb.net/artwork/";
+
   return (
     <div>
       <h1>New Pokemon page</h1>
@@ -9,7 +11,8 @@ function New() {
       <form action="/pokemon" method="POST">
         Name <input type="text" name="name" />
         <br />
-        Color: <input type="text" name="color" />
+        Image: <input name="img" defaultValue={IMG_URL + "default.jpg"} />
+        <br />
         <br />
         Ready To catch: <input type="checkbox" name="readyToEat" />
         <br />
