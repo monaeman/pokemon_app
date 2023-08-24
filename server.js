@@ -57,7 +57,7 @@ app.post("/pokemon", async(req, res) => {
   } else {
     req.body.readyToCatch = false;
   }
-  //pokemons.push(req.body);
+  pokemons.create(req.body);
   console.log("this is the pokemon array", pokemons);
   res.send("data recieved");
 });
