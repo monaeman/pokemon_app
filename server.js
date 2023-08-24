@@ -1,9 +1,26 @@
+require("dotenv").config();
+
 const express = require("express");
 
 const app = express();
 const port = 5006;
 
 const pokemons = require("./models/pokemon.js");
+
+//setup mongoose
+const mongoose = require("mongoose");
+//const Pokemon = require("./pokemon.js");
+
+//mongoose connection
+const mongoURI = process.env.MONGO_URI;
+console.log(mongoURI)
+//connect to mongodb
+mongoose.connect(mongoURI, {
+  //get rid of errors in the console
+
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 app.set("views", __dirname + "/views");
 app.set("view engine", "jsx");

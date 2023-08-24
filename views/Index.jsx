@@ -15,7 +15,7 @@ function Index({ pokemon }) {
         return (
           <li key={i}>
             {" "}
-            <a href={`pokemon/${i}`}>{pokemon.name} </a>
+            <a href={`pokemon/${pokemon.id}`}>{pokemon.name} </a>
           </li>
         );
       })}
