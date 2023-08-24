@@ -50,14 +50,14 @@ app.get("/pokemon/new", (req, res) => {
 });
 
 //Create = POST
-app.post("/pokemon", (req, res) => {
+app.post("/pokemon", async(req, res) => {
   console.log(req.body);
   if (req.body.readyToCatch === "on") {
     req.body.readyToCatch = true;
   } else {
     req.body.readyToCatch = false;
   }
-  pokemons.push(req.body);
+  //pokemons.push(req.body);
   console.log("this is the pokemon array", pokemons);
   res.send("data recieved");
 });
@@ -70,9 +70,11 @@ app.get("/pokemon/:index", (req, res) => {
   });
 });
 
-app.get("/pokemon/:id", (req, res) => {
+app.get("/pokemon/:id", async(req, res) => {
   const id = req.params.id;
   res.send(id);
+  const pokemon = await pokemon.findById(id);
+    res.render("Show", { pokemon: pokemon });
 });
 
 app.listen(port, () => {
