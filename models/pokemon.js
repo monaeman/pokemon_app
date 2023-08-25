@@ -4,8 +4,10 @@ const model = mongoose.model; // shorthand for model function
 
 const pokemonSchema = new Schema(
   {
-    name: String,
-    image: String,
+    name: { type: String },
+    img: { type: String },
+
+    readyToCatch : Boolean
 
     // likes: { type: Number, default: 0 },
     //sponsored: { type: Boolean, default: false },

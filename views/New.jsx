@@ -14,7 +14,7 @@ function New() {
         Image: <input name="img" defaultValue={IMG_URL + "default.jpg"} />
         <br />
          <br />
-        Ready To catch: <input type="checkbox" name="readyToEat" />
+        Ready To catch: <input type="checkbox" name="readyToCatch" />
   <br />
         <input type="submit" name="" value="Catch Pokemon" />
       </form>

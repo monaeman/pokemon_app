@@ -88,7 +88,7 @@ app.post("/pokemon", async(req, res) => {
   }
  await pokemons.create(req.body);
   console.log("this is the pokemon array", pokemons);
-  res.send("data recieved");
+  //res.send("data recieved");
 });
 
 //show
