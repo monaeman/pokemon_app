@@ -2,7 +2,9 @@ import React from "react";
 
 function Show({ pokemon }) {
   // Update the image link by adding .jpg
-  const imageUrl = pokemon.img + ".jpg";
+  const imageUrl = pokemon.img.endsWith(".jpg")
+  ? pokemon.img
+  : pokemon.img + ".jpg";
 
   return (
     <div>
